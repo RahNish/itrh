@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office of Sponsored Research</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 450px;
+        }
+        .tabs {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+        .tab {
+            cursor: pointer;
+            padding: 10px;
+            border-bottom: 2px solid transparent;
+        }
+        .tab.active {
+            border-bottom: 2px solid #007bff;
+            font-weight: bold;
+        }
+        .form-container {
+            display: none;
+        }
+        .form-container.active {
+            display: block;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            padding: 10px;
+            border: none;
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        #status {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Office of Sponsored Research</h2>
+    <h3>Register Your Achievement</h3>
+
+    <div class="container">
+        <div class="tabs">
+            <div class="tab active" onclick="showForm('profile')">Profile</div>
+            <div class="tab" onclick="showForm('publication')">Publication</div>
+            <div class="tab" onclick="showForm('patent')">Patent</div>
+            <div class="tab" onclick="showForm('funded')">Funded Project</div>
+        </div>
+
+        <!-- Profile Form -->
+        <div class="form-container active" id="profile">
+            <select id="emp_id">
+                <option value="">Select Emp_ID</option>
+                <option>PUNIV01952</option>
+                <option>PUNIV01210</option>
+                <option>PUNIV00835</option>
+                <option>PUNIV01947</option>
+                <option>PUNIV01983</option>
+                <option>PUNIV02215</option>
+                <option>PUNIV02265</option>
+                <option>PUNIV02301</option>
+                <option>PUNIV00903</option>
+                <option>PUNIV02294</option>
+                <option>PUNIV02350</option>
+                <option>PUNIV02356</option>
+                <option>PUNIV01387</option>
+                <option>PUNIV00846</option>
+                <option>PUNIV01398</option>
+                <option>PUNIV02499</option>
+                <option>PUNIV02507</option>
+                <option>PUNIV02508</option>
+                <option>PUNIV02506</option>
+                <option>PUNIV02532</option>
+                <option>PUNIV02539</option>
+                <option>PUNIV02498</option>
+            </select>
+            <label for="faculty_name"></label>
+            <select id="faculty_name">
+                <option value="">Select Faculty</option>
+                <option>Dr. Hidayath Ulla</option>
+                <option>Dr. Ashish Srivastava</option>
+                <option>Dr. Devendra Singh Dandotiya</option>
+                <option>Dr. Prabhukumar S</option>
+                <option>Dr. Shagufi Naz Ansari</option>
+                <option>Dr. Rupam Mukherjee</option>
+                <option>Dr. Bendi Anjaneyulu</option>
+                <option>Dr. Bhavya M B</option>
+                <option>Dr. Deepjyoti Mech</option>
+                <option>Dr. Dibya Yadav</option>
+                <option>Dr. Manepalli Raveendra Kiran</option>
+                <option>Dr. Abdul Haseeb Wani</option>
+                <option>Dr. Sowmyashree T</option>
+                <option>Dr. G Tirumala Vasu</option>
+                <option>Dr. Ashok Itagi</option>
+                <option>Dr. Chandan Patra</option>
+                <option>Dr. Sohini Chakraborty</option>
+                <option>Dr. Subrata Mondal</option>
+                <option>Dr. Vijaykumar G</option>
+                <option>Dr. Prabodh Ranjan</option>
+                <option>Dr. Chintamani Pai</option>
+                <option>Dr. Sk Safikul Islam</option>
+                <option>Dr. Nandakishora Y</option>
+            </select>
+            <input type="date" id="date_of_joining" required>
+            <label for="designation"></label>
+            <select id="designation">
+                <option value="">Select Designation</option>
+                <option>Assistant Professor</option>
+                <option>Associate Professor</option>
+                <option>Professor</option>
+            </select>
+
+            <label for="department"></label>
+            <select id="department">
+                <option value="">Select Department</option>
+                <option>Mechanical Engineering</option>
+                <option>Civil Engineering</option>
+                <option>Computer Science and Engineering</option>
+                <option>Electrical and Electronics Engineering</option>
+                <option>Mathematics</option>
+                <option>Physics</option>
+                <option>Chemistry</option>
+            </select>
+            <input type="text" id="area_of_research" placeholder="Area of Research" required>
+            <button onclick="submitForm('profile')">Submit</button>
+        </div>
+
+        <!-- Publication Form -->
+        <div class="form-container" id="publication">
+            <h4>Publication Form</h4>
+            <select id="pub_emp_id">
+                <option value="">Select Emp_ID</option>
+                <option>PUNIV01952</option>
+                <option>PUNIV01210</option>
+                <option>PUNIV00835</option>
+                <option>PUNIV01947</option>
+                <option>PUNIV01983</option>
+                <option>PUNIV02215</option>
+                <option>PUNIV02265</option>
+                <option>PUNIV02301</option>
+                <option>PUNIV00903</option>
+                <option>PUNIV02294</option>
+                <option>PUNIV02350</option>
+                <option>PUNIV02356</option>
+                <option>PUNIV01387</option>
+                <option>PUNIV00846</option>
+                <option>PUNIV01398</option>
+                <option>PUNIV02499</option>
+                <option>PUNIV02507</option>
+                <option>PUNIV02508</option>
+                <option>PUNIV02506</option>
+                <option>PUNIV02532</option>
+                <option>PUNIV02539</option>
+                <option>PUNIV02498</option>
+            </select>
+            <label for="faculty_name"></label>
+            <select id="pub_faculty_name">
+                <option value="">Select Faculty</option>
+                <option>Dr. Hidayath Ulla</option>
+                <option>Dr. Ashish Srivastava</option>
+                <option>Dr. Devendra Singh Dandotiya</option>
+                <option>Dr. Prabhukumar S</option>
+                <option>Dr. Shagufi Naz Ansari</option>
+                <option>Dr. Rupam Mukherjee</option>
+                <option>Dr. Bendi Anjaneyulu</option>
+                <option>Dr. Bhavya M B</option>
+                <option>Dr. Deepjyoti Mech</option>
+                <option>Dr. Dibya Yadav</option>
+                <option>Dr. Manepalli Raveendra Kiran</option>
+                <option>Dr. Abdul Haseeb Wani</option>
+                <option>Dr. Sowmyashree T</option>
+                <option>Dr. G Tirumala Vasu</option>
+                <option>Dr. Ashok Itagi</option>
+                <option>Dr. Chandan Patra</option>
+                <option>Dr. Sohini Chakraborty</option>
+                <option>Dr. Subrata Mondal</option>
+                <option>Dr. Vijaykumar G</option>
+                <option>Dr. Prabodh Ranjan</option>
+                <option>Dr. Chintamani Pai</option>
+                <option>Dr. Sk Safikul Islam</option>
+                <option>Dr. Nandakishora Y</option>
+            </select>
+            <select id="pub_type">
+                <option>Journal</option>
+                <option>Book Chapter</option>
+                <option>Conference</option>
+            </select>
+            <input type="text" id="pub_title" placeholder="Title of Article" required>
+            <input type="date" id="pub_date" required>
+            <select id="pub_indexed">
+                <option value="">Article Indexing</option>
+                <option>Scopus</option>
+                <option>WoS</option>
+            </select>
+            <select id="pub_quartile">
+                <option value="">Quartile</option>
+                <option>Q1</option>
+                <option>Q2</option>
+                <option>Q3</option>
+                <option>Q4</option>
+                <option>Others</option>
+            </select>
+            <button onclick="submitForm('publication')">Submit</button>
+        </div>
+
+        <!-- Patent Form -->
+        <div class="form-container" id="patent">
+            <h4>Patent Form</h4>
+            <select id="pat_emp_id">
+                <option value="">Select Emp_ID</option>
+                <option>PUNIV01952</option>
+                <option>PUNIV01210</option>
+                <option>PUNIV00835</option>
+                <option>PUNIV01947</option>
+                <option>PUNIV01983</option>
+                <option>PUNIV02215</option>
+                <option>PUNIV02265</option>
+                <option>PUNIV02301</option>
+                <option>PUNIV00903</option>
+                <option>PUNIV02294</option>
+                <option>PUNIV02350</option>
+                <option>PUNIV02356</option>
+                <option>PUNIV01387</option>
+                <option>PUNIV00846</option>
+                <option>PUNIV01398</option>
+                <option>PUNIV02499</option>
+                <option>PUNIV02507</option>
+                <option>PUNIV02508</option>
+                <option>PUNIV02506</option>
+                <option>PUNIV02532</option>
+                <option>PUNIV02539</option>
+                <option>PUNIV02498</option>
+            </select>
+            <label for="faculty_name"></label>
+            <select id="pat_faculty_name">
+                <option value="">Select Faculty</option>
+                <option>Dr. Hidayath Ulla</option>
+                <option>Dr. Ashish Srivastava</option>
+                <option>Dr. Devendra Singh Dandotiya</option>
+                <option>Dr. Prabhukumar S</option>
+                <option>Dr. Shagufi Naz Ansari</option>
+                <option>Dr. Rupam Mukherjee</option>
+                <option>Dr. Bendi Anjaneyulu</option>
+                <option>Dr. Bhavya M B</option>
+                <option>Dr. Deepjyoti Mech</option>
+                <option>Dr. Dibya Yadav</option>
+                <option>Dr. Manepalli Raveendra Kiran</option>
+                <option>Dr. Abdul Haseeb Wani</option>
+                <option>Dr. Sowmyashree T</option>
+                <option>Dr. G Tirumala Vasu</option>
+                <option>Dr. Ashok Itagi</option>
+                <option>Dr. Chandan Patra</option>
+                <option>Dr. Sohini Chakraborty</option>
+                <option>Dr. Subrata Mondal</option>
+                <option>Dr. Vijaykumar G</option>
+                <option>Dr. Prabodh Ranjan</option>
+                <option>Dr. Chintamani Pai</option>
+                <option>Dr. Sk Safikul Islam</option>
+                <option>Dr. Nandakishora Y</option>
+            </select>
+            <input type="text" id="pat_title" placeholder="Title of Patent" required>
+            <select id="pat_position">
+                <option value="">Your Position</option>
+                <option>Primary Inventor</option>
+                <option>Others</option>
+            </select>
+            <input type="date" id="pat_filed_date" required>
+            <input type="text" id="pat_number" placeholder="Patent Number">
+            <select id="pat_status">
+                <option value="">Status</option>
+                <option>Filed</option>
+                <option>Published</option>
+                <option>Granted</option>
+            </select>
+            <button onclick="submitForm('patent')">Submit</button>
+        </div>
+
+        <!-- Funded Project Form -->
+        <div class="form-container" id="funded">
+            <h4>Funded Project Form</h4>
+            <select id="fund_emp_id">
+                <option value="">Select Emp_ID</option>
+                <option>PUNIV01952</option>
+                <option>PUNIV01210</option>
+                <option>PUNIV00835</option>
+                <option>PUNIV01947</option>
+                <option>PUNIV01983</option>
+                <option>PUNIV02215</option>
+                <option>PUNIV02265</option>
+                <option>PUNIV02301</option>
+                <option>PUNIV00903</option>
+                <option>PUNIV02294</option>
+                <option>PUNIV02350</option>
+                <option>PUNIV02356</option>
+                <option>PUNIV01387</option>
+                <option>PUNIV00846</option>
+                <option>PUNIV01398</option>
+                <option>PUNIV02499</option>
+                <option>PUNIV02507</option>
+                <option>PUNIV02508</option>
+                <option>PUNIV02506</option>
+                <option>PUNIV02532</option>
+                <option>PUNIV02539</option>
+                <option>PUNIV02498</option>
+            </select>
+            
+            <select id="fund_faculty_name">
+                <option value="">Select Faculty</option>
+                <option>Dr. Hidayath Ulla</option>
+                <option>Dr. Ashish Srivastava</option>
+                <option>Dr. Devendra Singh Dandotiya</option>
+                <option>Dr. Prabhukumar S</option>
+                <option>Dr. Shagufi Naz Ansari</option>
+                <option>Dr. Rupam Mukherjee</option>
+                <option>Dr. Bendi Anjaneyulu</option>
+                <option>Dr. Bhavya M B</option>
+                <option>Dr. Deepjyoti Mech</option>
+                <option>Dr. Dibya Yadav</option>
+                <option>Dr. Manepalli Raveendra Kiran</option>
+                <option>Dr. Abdul Haseeb Wani</option>
+                <option>Dr. Sowmyashree T</option>
+                <option>Dr. G Tirumala Vasu</option>
+                <option>Dr. Ashok Itagi</option>
+                <option>Dr. Chandan Patra</option>
+                <option>Dr. Sohini Chakraborty</option>
+                <option>Dr. Subrata Mondal</option>
+                <option>Dr. Vijaykumar G</option>
+                <option>Dr. Prabodh Ranjan</option>
+                <option>Dr. Chintamani Pai</option>
+                <option>Dr. Sk Safikul Islam</option>
+                <option>Dr. Nandakishora Y</option>
+            </select>
+            <input type="text" id="fund_title" placeholder="Title of Proposal" required>
+            <select id="fund_agency">
+                <option value="">Funding Agency</option>
+                <option>SERB</option>
+                <option>ANRF</option>
+                <option>DBT</option>
+                <option>DST</option>
+                <option>Ministry of Mines</option>
+                <option>ARDB</option>
+                <option>VGST</option>
+                <option>ICSSR</option>
+            </select>
+            <input type="text" id="fund_scheme" placeholder="Scheme" required>
+            <input type="date" id="fund_submission_date" required>
+            <input type="number" id="fund_amount" placeholder="Amount in Rs" required>
+            <select id="fund_status">
+                <option value="">Status</option>
+                <option>Submitted</option>
+                <option>Under Review</option>
+                <option>Shortlisted</option>
+                <option>Granted</option>
+                <option>Not Recommended</option>
+            </select>
+            <button onclick="submitForm('funded')">Submit</button>
+        </div>
+
+        <p id="status"></p>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            document.querySelectorAll(".form-container").forEach(form => form.classList.remove("active"));
+            document.querySelector(`#${formId}`).classList.add("active");
+        }
+
+        function submitForm(formType) {
+            let formData = { type: formType };
+            document.querySelectorAll(`#${formType} input, #${formType} select`).forEach(input => {
+                formData[input.id] = input.value;
+            });
+
+            fetch("https://script.google.com/macros/s/AKfycby_BwwERkImeWhwYw6DRfIQgIwr3ifY2bQ-Q0hcAwOevkeG1INk7VfLWYjkRCYO9-Xi/exec", {
+                method: "POST",
+                mode: "no-cors",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(formData)
+            })
+            .then(() => {
+                document.getElementById("status").innerText = "✅ Submitted successfully!";
+            })
+            .catch(() => {
+                document.getElementById("status").innerText = "❌ Submission failed!";
+            });
+        }
+    </script>
+
+</body>
+</html> 
+
+
+ 
